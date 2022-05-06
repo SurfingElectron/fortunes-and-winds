@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Nunito:wght@300&display=swap');
 
-body,
 html {
+/* 
+Set a base font size of 10px in the html for easier rem calculations 
+Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px etc 
+*/
+
+font-size: 10px;
+}
+
+body {
   font-family: "Nunito", sans;
-  font-size: 1.1em;
+  font-size: 1.6rem;
   background-color:#c7e4ff;
   background-image:
   radial-gradient(circle at 100% 150%, #c7e4ff 24%, white 24%, white 28%, #c7e4ff 28%, #c7e4ff 36%, white 36%, white 40%, transparent 40%, transparent),
@@ -14,11 +23,21 @@ html {
   background-size: 100px 50px;
 }
 
-.class_buttons {
-    display: flex;
+.dice-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background-color: darkgoldenrod;
   }
 
-  .dice_button {
+.die-button {
     padding: 32px;
     margin: 16px;
-  }
+}
+
+#title-header {
+  font-family: Merienda, sans;
+  font-size: 4rem;
+  text-align: center;
+
+}

@@ -1,52 +1,58 @@
-
 //VARIABLE DEFINITIONS
 //Dice
-const earthDie = ["Earth", "Earth", "Earth", "North", "North", "Rice"];
-const waterDie = ["Water", "Water", "Water", "East", "East", "Fish"];
-const fireDie = ["Fire", "Fire", "Fire", "West", "West", "Tree"];
-const airDie = ["Air", "Air", "Air", "South", "South", "Bird"];
-const moonDie = ["Void", "Void", "Fortunes", "Fortunes", "Sun", "Moon"];
+const dice = [
+    ['Earth', 'Earth', 'Earth', 'North', 'North', 'Rice'],
+    ['Water', 'Water', 'Water', 'East', 'East', 'Fish'],
+    ['Fire', 'Fire', 'Fire', 'West', 'West', 'Tree'],
+    ['Air', 'Air', 'Air', 'South', 'South', 'Bird'],
+    ['Void', 'Void', 'Fortunes', 'Fortunes', 'Sun', 'Moon']
+]
 
-//Winning combinations
-const winFW = ["North", "East", "West", "South", "Fortunes"]
-const winLB = ["North", "East", "West", "South", "Sun"]
-const winEW = ["North", "East", "West", "South", "Void"]
-const winSB = ["Earth", "Water", "Fire", "Air", "Void"]
-const winLT = ["Earth", "Water", "Fire", "Air", "Sun"]
-const winST = ["Earth", "Water", "Fire", "Air", "Fortunes"] 
+//Winning combinations: 5 dice, last array value is the name of the combination
+const winningCombinations = [ 
+    ['North', 'East', 'West', 'South', 'Fortunes', 'Fortunes and Winds'],
+    ['North', 'East', 'West', 'South', 'Sun', 'The Lady\'s Breath'],
+    ['North', 'East', 'West', 'South', 'Void', 'Empty Winds'],
+    ['Earth', 'Water', 'Fire', 'Air', 'Void', 'Shinsei\'s Blessing'],
+    ['Earth', 'Water', 'Fire', 'Air', 'Sun', 'The Lady\'s Tears'],
+    ['Earth', 'Water', 'Fire', 'Air', 'Fortunes', 'Seven Thunders']
+];
 
 
 //FUNCTIONS
-//roll a d6 (albeit 0-5)
+//Roll a d6 (albeit 0-5)
 function rollD6() {
-    let d6Value = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
+    let d6Value = Math.floor(Math.random() * 6);
     return d6Value;
 }
 
-//rolls all of the F&W dice
+//Rolls the shooter's dice: iterates through the dice array
 function throwDice() {
-    let earthRoll = earthDie[rollD6()];
-    let waterRoll = waterDie[rollD6()];
-    let fireRoll = fireDie[rollD6()];
-    let airRoll = airDie[rollD6()];
-    let moonRoll = moonDie[rollD6()];
-    return [earthRoll, waterRoll, fireRoll, airRoll, moonRoll];
-}
+    const shooterRoll = []
+    for (i = 0; i < 5; i++) {
+        shooterRoll.push(dice[i][rollD6()]);
+    }
+    return shooterRoll
+};
 
-//comparing two arrays
-function compareArray(roll, combination) {
-    return Array.isArray(roll) &&
-    Array.isArray(combination) &&
-    roll.length === combination.length &&
-    roll.every((val, index) => val === combination[index]);
-}
+//Compares the shooter's roll to the winning combinations
+function compareResults(roll) {
+    for (i=0; i < 6; i++) {
+        console.log('Die:', dice[i][1], '| Shooter roll:', roll[i], '| Winning Match:', winningCombinations[0][i]); // FOR TESTING
+        if (roll[i] !== winningCombinations[0][i]) {
+            return false;
+        } else console.log('MATCHING DICE');
+    };
+};
 
-function checkWinning() {
-    let isWinning = compareArray();
-}
+function isWin() {
+    let isWinning = compareResults();
+};
 
 
 
 //JUST CHECKING
 currentRoll = throwDice(); 
-console.log(currentRoll);
+let testVariable = compareResults(['North', 'East', 'West', 'South', 'Fortunes']); 
+//console.log('Shooter rolled:', currentRoll); //FOR TESTING
+ 
