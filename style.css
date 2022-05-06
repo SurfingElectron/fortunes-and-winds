@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+body,
+html {
+  font-family: "Nunito", sans;
+  font-size: 1.1em;
+  background-color:#c7e4ff;
+  background-image:
+  radial-gradient(circle at 100% 150%, #c7e4ff 24%, white 24%, white 28%, #c7e4ff 28%, #c7e4ff 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, #c7e4ff 24%, white 24%, white 28%, #c7e4ff 28%, #c7e4ff 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, #c7e4ff 10%, #c7e4ff 23%, white 23%, white 30%, #c7e4ff 30%, #c7e4ff 43%, white 43%, white 50%, #c7e4ff 50%, #c7e4ff 63%, white 63%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, #c7e4ff 5%, #c7e4ff 15%, white 15%, white 20%, #c7e4ff 20%, #c7e4ff 29%, white 29%, white 34%, #c7e4ff 34%, #c7e4ff 44%, white 44%, white 49%, transparent 49%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, #c7e4ff 5%, #c7e4ff 15%, white 15%, white 20%, #c7e4ff 20%, #c7e4ff 29%, white 29%, white 34%, #c7e4ff 34%, #c7e4ff 44%, white 44%, white 49%, transparent 49%, transparent);
+  background-size: 100px 50px;
+}
+
+.class_buttons {
+    display: flex;
+  }
+
+  .dice_button {
+    padding: 32px;
+    margin: 16px;
+  }
