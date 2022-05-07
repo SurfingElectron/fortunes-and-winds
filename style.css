@@ -13,37 +13,46 @@ font-size: 10px;
 body {
   font-family: "Nunito", sans;
   font-size: 1.6rem;
-  background-color:#c7e4ff;
+  background-color:#E3F2FD;
   background-image:
-  radial-gradient(circle at 100% 150%, #c7e4ff 24%, white 24%, white 28%, #c7e4ff 28%, #c7e4ff 36%, white 36%, white 40%, transparent 40%, transparent),
-  radial-gradient(circle at 0    150%, #c7e4ff 24%, white 24%, white 28%, #c7e4ff 28%, #c7e4ff 36%, white 36%, white 40%, transparent 40%, transparent),
-  radial-gradient(circle at 50%  100%, white 10%, #c7e4ff 10%, #c7e4ff 23%, white 23%, white 30%, #c7e4ff 30%, #c7e4ff 43%, white 43%, white 50%, #c7e4ff 50%, #c7e4ff 63%, white 63%, white 71%, transparent 71%, transparent),
-  radial-gradient(circle at 100% 50%, white 5%, #c7e4ff 5%, #c7e4ff 15%, white 15%, white 20%, #c7e4ff 20%, #c7e4ff 29%, white 29%, white 34%, #c7e4ff 34%, #c7e4ff 44%, white 44%, white 49%, transparent 49%, transparent),
-  radial-gradient(circle at 0    50%, white 5%, #c7e4ff 5%, #c7e4ff 15%, white 15%, white 20%, #c7e4ff 20%, #c7e4ff 29%, white 29%, white 34%, #c7e4ff 34%, #c7e4ff 44%, white 44%, white 49%, transparent 49%, transparent);
+  radial-gradient(circle at 100% 150%, #E3F2FD 24%, white 24%, white 28%, #E3F2FD 28%, #E3F2FD 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, #E3F2FD 24%, white 24%, white 28%, #E3F2FD 28%, #E3F2FD 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, #E3F2FD 10%, #E3F2FD 23%, white 23%, white 30%, #E3F2FD 30%, #E3F2FD 43%, white 43%, white 50%, #E3F2FD 50%, #E3F2FD 63%, white 63%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, #E3F2FD 5%, #E3F2FD 15%, white 15%, white 20%, #E3F2FD 20%, #E3F2FD 29%, white 29%, white 34%, #E3F2FD 34%, #E3F2FD 44%, white 44%, white 49%, transparent 49%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, #E3F2FD 5%, #E3F2FD 15%, white 15%, white 20%, #E3F2FD 20%, #E3F2FD 29%, white 29%, white 34%, #E3F2FD 34%, #E3F2FD 44%, white 44%, white 49%, transparent 49%, transparent);
   background-size: 100px 50px;
 }
 
+/*
+div + div {margin: 15px 0px;}
+*/
+
 /*Dice section of the page*/
-.dice-buttons {
+.dice-buttons, .roller-buttons {
   display: flex;
   align-items: center;
   justify-content: center;  
-  background-color: hsla(0, 0%, 60%, 0.644); /*Just for helping me lay out the page*/
+/*  background-color: #448AFF80; Just for helping me lay out the page*/
   border-radius: 25px;
   }
 
 .die-button {
-    padding: 25px;
-    margin: 5px 10px;
-    width: 100px;
-    height: 100px;
-    border: 0;  
-    border-radius: 50%;
-    box-shadow: 3px 3px 5px #343434;
+  font-family: Merienda, sans;
+  font-size: 2rem;
+  padding: 25px;
+  margin: 5px 10px;
+  width: 100px;
+  height: 100px;
+  border: 0;  
+  border-radius: 50%;
+  background-color: #82B1FF;
+  box-shadow: 3px 3px 5px #343434;
+  backdrop-filter: blur(0px);
 }
 
-.die-button:focus {
-  box-shadow: none; /*Only when focused, maybe apply with js when selected?*/
+.die-button:active {
+  box-shadow: none;
+  box-shadow: inset 2px 2px 5px #343434;
 }
 
 .button-and-label {
@@ -54,6 +63,23 @@ body {
 .die-button-label {
   display: block;
   font-family: Merienda, sans;
+  font-size: 1.8rem;
+}
+
+.turn-information {
+  font-family: Merienda, sans;
+  font-size: 3rem;
+  text-align: center; 
+}
+
+#throw-button {
+  font-family: Merienda, sans;
+  font-size: 4rem;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  border-radius: 25px;
+
 }
 
 #title-header {
@@ -63,23 +89,37 @@ body {
 
 }
 
+/*Starting visibility for button labels*/
+label[for=earth-button] {
+  visibility: hidden;
+  }
+label[for=water-button] {
+  visibility: hidden;
+  }
+label[for=fire-button] {
+  visibility: hidden;
+  }
+label[for=air-button] {
+  visibility: hidden;
+  }
+label[for=moon-button] {
+  visibility: hidden;
+  }
+
 /*Images for buttons*/
 #earth-button{
   background: url('img/icon-l5r-earth.png') no-repeat; 
+  background-position: center;
 }
-
 #water-button{
   background: url('img/icon-l5r-water.png') no-repeat
 }
-
 #fire-button{
   background: url('img/icon-l5r-fire.png') no-repeat;
 }
-
 #air-button{
   background: url('img/icon-l5r-air.png') no-repeat;
 }
-
 #moon-button{
   background: url('img/icon-l5r-void.png') no-repeat;
 }
