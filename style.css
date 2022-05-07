@@ -23,16 +23,37 @@ body {
   background-size: 100px 50px;
 }
 
+/*Dice section of the page*/
 .dice-buttons {
   display: flex;
   align-items: center;
   justify-content: center;  
-  background-color: darkgoldenrod;
+  background-color: hsla(0, 0%, 60%, 0.644); /*Just for helping me lay out the page*/
+  border-radius: 25px;
   }
 
 .die-button {
-    padding: 32px;
-    margin: 16px;
+    padding: 25px;
+    margin: 5px 10px;
+    width: 100px;
+    height: 100px;
+    border: 0;  
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px #343434;
+}
+
+.die-button:focus {
+  box-shadow: none; /*Only when focused, maybe apply with js when selected?*/
+}
+
+.button-and-label {
+  display: inline-block;
+  text-align: center; 
+}
+
+.die-button-label {
+  display: block;
+  font-family: Merienda, sans;
 }
 
 #title-header {
@@ -40,4 +61,25 @@ body {
   font-size: 4rem;
   text-align: center;
 
+}
+
+/*Images for buttons*/
+#earth-button{
+  background: url('img/icon-l5r-earth.png') no-repeat; 
+}
+
+#water-button{
+  background: url('img/icon-l5r-water.png') no-repeat
+}
+
+#fire-button{
+  background: url('img/icon-l5r-fire.png') no-repeat;
+}
+
+#air-button{
+  background: url('img/icon-l5r-air.png') no-repeat;
+}
+
+#moon-button{
+  background: url('img/icon-l5r-void.png') no-repeat;
 }
